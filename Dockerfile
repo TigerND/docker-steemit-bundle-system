@@ -5,14 +5,6 @@ MAINTAINER Aleksandr Zykov <tiger@mano.email>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN ( \
-        apt-get install -qy --no-install-recommends \
-            figlet \
-    ) && \
-    apt-get clean -qy
-
-RUN figlet 'System'
-
-RUN ( \
         apt-get update -q &&\
         apt-get upgrade -qy --no-install-recommends \
     ) && \
@@ -28,6 +20,7 @@ RUN ( \
             curl \
             net-tools \
             iptables \
+            figlet \
     ) && \
     apt-get clean -qy
     
